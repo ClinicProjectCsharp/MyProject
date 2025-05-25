@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 namespace Empl.Properties
 {
 
@@ -26,5 +27,32 @@ namespace Empl.Properties
                 return defaultInstance;
             }
         }
+=======
+namespace Dacto.Properties {
+    
+    
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=`employee_management`;Integrated Security=True;Encr" +
+            "ypt=False")]
+        public string _employee_management_ConnectionString {
+            get {
+                return ((string)(this["_employee_management_ConnectionString"]));
+            }
+        }
+>>>>>>> 03ad57bdd424fdd7c91b73008c93f4d9b6541004
     }
 }
