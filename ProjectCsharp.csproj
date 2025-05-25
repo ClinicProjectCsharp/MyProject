@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22018FDE-7561-4A6C-A04D-CE14B6602296}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjectCsharp</RootNamespace>
+    <AssemblyName>ProjectCsharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>5a6dd1aa-243d-4385-9bf3-ce8534da0f96.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.8.0.1\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MyDatabase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyDatabase\bin\Debug\MyDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=8.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Pkcs.8.0.1\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.4.0.25105.5786\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Drawing.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.4.0.25105.5786\lib\net40\Xceed.Drawing.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.4.0.25105.5786\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Login\views\Department\frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Department\frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Documents\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Documents\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Employee\frmDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Employee\frmDoctor.Designer.cs">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Employee\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Employee\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\frmLoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\frmLoginScreen.Designer.cs">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Cashf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Cashf.Designer.cs">
+      <DependentUpon>Cashf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\ills\frmill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\ills\frmill.Designer.cs">
+      <DependentUpon>frmill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\ills\frmMawaeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\ills\frmMawaeed.Designer.cs">
+      <DependentUpon>frmMawaeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Moalegat\frmMoalegat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Moalegat\frmMoalegat.Designer.cs">
+      <DependentUpon>frmMoalegat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Notifications\frmNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Notifications\frmNotification.Designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Reports\frmReportUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Reports\frmReportUser.Designer.cs">
+      <DependentUpon>frmReportUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Setting\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Setting\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Setting\BackUpDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Setting\BackUpDatabase.Designer.cs">
+      <DependentUpon>BackUpDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\frmDetailPerimission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\frmDetailPerimission.Designer.cs">
+      <DependentUpon>frmDetailPerimission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingBase.Designer.cs">
+      <DependentUpon>frmSettingBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingImge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingImge.Designer.cs">
+      <DependentUpon>frmSettingImge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingStatements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Setting\frmSettingStatements.Designer.cs">
+      <DependentUpon>frmSettingStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\frmCurrentUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\frmCurrentUser.Designer.cs">
+      <DependentUpon>frmCurrentUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\frmPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\frmPermissions.Designer.cs">
+      <DependentUpon>frmPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\frmSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\frmSendEmail.Designer.cs">
+      <DependentUpon>frmSendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\views\Users\UserDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\views\Users\UserDetail.Designer.cs">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\clsPrint.cs" />
+    <Compile Include="model\Setting.cs" />
+    <Compile Include="model\Users.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login\views\Department\frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Documents\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Employee\frmDoctor.resx">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Employee\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\frmLoginScreen.resx">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Cashf.resx">
+      <DependentUpon>Cashf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\ills\frmill.resx">
+      <DependentUpon>frmill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\ills\frmMawaeed.resx">
+      <DependentUpon>frmMawaeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Moalegat\frmMoalegat.resx">
+      <DependentUpon>frmMoalegat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Notifications\frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Reports\frmReportUser.resx">
+      <DependentUpon>frmReportUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Setting\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Setting\BackUpDatabase.resx">
+      <DependentUpon>BackUpDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\frmDetailPerimission.resx">
+      <DependentUpon>frmDetailPerimission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Setting\frmSettingBase.resx">
+      <DependentUpon>frmSettingBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Setting\frmSettingImge.resx">
+      <DependentUpon>frmSettingImge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Setting\frmSettingStatements.resx">
+      <DependentUpon>frmSettingStatements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\frmCurrentUser.resx">
+      <DependentUpon>frmCurrentUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\frmPermissions.resx">
+      <DependentUpon>frmPermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\frmSendEmail.resx">
+      <DependentUpon>frmSendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\views\Users\UserDetail.resx">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Login\Picture\license.pdf" />
+    <None Include="Login\views\Doctor\Dacto\Advance Java Lecture 2.pdf" />
+    <None Include="Login\views\Doctor\Dacto\Advance Java Lecture1.pdf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="5a6dd1aa-243d-4385-9bf3-ce8534da0f96.ico" />
+    <Content Include="Login\Picture\353092f9-5d52-4c47-ba96-0e3fce0c4bce.jpeg" />
+    <Content Include="Login\Picture\5ceae6f2-ebab-4722-9ce4-0df193fa8306.jpeg" />
+    <Content Include="Login\Picture\7ea6e6cc-b159-436e-8d29-2517b8bfee71.jpeg" />
+    <Content Include="Login\Picture\9 habits that are killing your teeth - WTOP News.jpeg" />
+    <Content Include="Login\Picture\Add New User 32.png" />
+    <Content Include="Login\Picture\application %281%29.png" />
+    <Content Include="Login\Picture\application.png" />
+    <Content Include="Login\Picture\ApplicationType.png" />
+    <Content Include="Login\Picture\authorization %281%29.png" />
+    <Content Include="Login\Picture\authorization.png" />
+    <Content Include="Login\Picture\b7644f80-4867-4c67-b25a-5ae4d9201226.jpeg" />
+    <Content Include="Login\Picture\bell.png" />
+    <Content Include="Login\Picture\broom.png" />
+    <Content Include="Login\Picture\building.png" />
+    <Content Include="Login\Picture\Business Technology Background Banner Design, Wallpaper, Psd, Slogan Background Image And Wallpaper for Free Download.jpeg" />
+    <Content Include="Login\Picture\call 32.png" />
+    <Content Include="Login\Picture\check %281%29.png" />
+    <Content Include="Login\Picture\cleaning.png" />
+    <Content Include="Login\Picture\cloud-backup-up-arrow.png" />
+    <Content Include="Login\Picture\cloud-computing %281%29.png" />
+    <Content Include="Login\Picture\cloud-computing.png" />
+    <Content Include="Login\Picture\contact.png" />
+    <Content Include="Login\Picture\data-recovery %281%29.png" />
+    <Content Include="Login\Picture\data-recovery %282%29.png" />
+    <Content Include="Login\Picture\data-recovery %283%29.png" />
+    <Content Include="Login\Picture\data-recovery.png" />
+    <Content Include="Login\Picture\dental-care.gif" />
+    <Content Include="Login\Picture\Download premium png of Gray fluid shape frame design element by wifiseeker about png, transparent png, abstract png, frame, and art 2339622.jpeg" />
+    <Content Include="Login\Picture\dust.png" />
+    <Content Include="Login\Picture\evaluation %281%29.png" />
+    <Content Include="Login\Picture\evaluation %282%29.png" />
+    <Content Include="Login\Picture\evaluation.png" />
+    <Content Include="Login\Picture\eye.png" />
+    <Content Include="Login\Picture\fever.png" />
+    <Content Include="Login\Picture\Foto de Stock Background_ _ Adobe Stock.jpeg" />
+    <Content Include="Login\Picture\Free  Business, Geometric, Technology Background Images, Blue Abstract Geometric Background Photo Background PNG and Vectors.jpeg" />
+    <Content Include="Login\Picture\Free  Wallpaper, Blue, Science Background Images, Abstract Background Banner Blue Atmospheric Science And Technology Photo Background PNG and Vectors %281%29.jpeg" />
+    <Content Include="Login\Picture\Free  Wallpaper, Blue, Science Background Images, Abstract Background Banner Blue Atmospheric Science And Technology Photo Background PNG and Vectors.jpeg" />
+    <Content Include="Login\Picture\Free Dental Knowledge Glows Image _ Download at StockCake.jpeg" />
+    <Content Include="Login\Picture\free-notifications-bell-outline-icon-png-701751694974381h7wblk6fpx.png" />
+    <Content Include="Login\Picture\Happy tooth character signing good with his hand with transparent background _ Premium AI-generated PSD.jpeg" />
+    <Content Include="Login\Picture\id.png" />
+    <Content Include="Login\Picture\invisible.png" />
+    <Content Include="Login\Picture\List 32.png" />
+    <Content Include="Login\Picture\location.png" />
+    <Content Include="Login\Picture\log-in.png" />
+    <Content Include="Login\Picture\log-out.png" />
+    <Content Include="Login\Picture\logout.png" />
+    <Content Include="Login\Picture\management.png" />
+    <Content Include="Login\Picture\manager.png" />
+    <Content Include="Login\Picture\medical.png" />
+    <Content Include="Login\Picture\money 32 - 2.png" />
+    <Content Include="Login\Picture\money 32.png" />
+    <Content Include="Login\Picture\music %281%29.png" />
+    <Content Include="Login\Picture\music.png" />
+    <Content Include="Login\Picture\next.png" />
+    <Content Include="Login\Picture\notification %281%29.png" />
+    <Content Include="Login\Picture\notification.png" />
+    <Content Include="Login\Picture\office-man %281%29.png" />
+    <Content Include="Login\Picture\office-man.png" />
+    <Content Include="Login\Picture\permission %281%29.png" />
+    <Content Include="Login\Picture\permission.png" />
+    <Content Include="Login\Picture\Premium Vector _ Teeth healthy sparkling white superheroes blue dress and muscle hand strong with calcium fluorine.jpeg" />
+    <Content Include="Login\Picture\profile.png" />
+    <Content Include="Login\Picture\Redirect Notice.jpeg" />
+    <Content Include="Login\Picture\report %282%29.png" />
+    <Content Include="Login\Picture\reset.png" />
+    <Content Include="Login\Picture\restriction.png" />
+    <Content Include="Login\Picture\room-with-large-mirror-large-monitor-with-large-screen-it_1064589-235045.jpg" />
+    <Content Include="Login\Picture\settings %284%29.png" />
+    <Content Include="Login\Picture\settings %285%29.png" />
+    <Content Include="Login\Picture\settings %286%29.png" />
+    <Content Include="Login\Picture\settings.png" />
+    <Content Include="Login\Picture\shield %281%29.png" />
+    <Content Include="Login\Picture\shield.png" />
+    <Content Include="Login\Picture\sign_in 32.png" />
+    <Content Include="Login\Picture\sign_out 32 -2.png" />
+    <Content Include="Login\Picture\smart-card.png" />
+    <Content Include="Login\Picture\surgeon.png" />
+    <Content Include="Login\Picture\switch.png" />
+    <Content Include="Login\Picture\syringe.png" />
+    <Content Include="Login\Picture\team.png" />
+    <Content Include="Login\Picture\Test 32.png" />
+    <Content Include="Login\Picture\toothache.png" />
+    <Content Include="Login\Picture\translation %281%29.png" />
+    <Content Include="Login\Picture\translation.png" />
+    <Content Include="Login\Picture\treat.png" />
+    <Content Include="Login\Picture\Un nouveau moyen de réparer l%27émail des dents après une carie _ - Top Santé.jpeg" />
+    <Content Include="Login\Picture\unlock.png" />
+    <Content Include="Login\Picture\update.png" />
+    <Content Include="Login\Picture\user %281%29.png" />
+    <Content Include="Login\Picture\user.png" />
+    <Content Include="Login\Picture\visa.png" />
+    <Content Include="Login\Picture\woman.png" />
+    <Content Include="Login\Picture\العناية بالأسنان خلفية الإعلان الزرقاء ضرس العناية بالأسنان أزرق خلفية زرقاء خلفية صورة خلفية للتنزيل المجاني %281%29.jpeg" />
+    <Content Include="Login\Picture\العناية بالأسنان خلفية الإعلان الزرقاء ضرس العناية بالأسنان أزرق خلفية زرقاء خلفية صورة خلفية للتنزيل المجاني.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\1485477104-basket_78591.png" />
+    <Content Include="Login\views\Doctor\Dacto\19_104865.png" />
+    <Content Include="Login\views\Doctor\Dacto\4202011emailgmaillogomailsocialsocialmedia-115677_115624 %282%29.png" />
+    <Content Include="Login\views\Doctor\Dacto\588hospital_100778.png" />
+    <Content Include="Login\views\Doctor\Dacto\Add_27013.png" />
+    <Content Include="Login\views\Doctor\Dacto\alarm-clock_icon-icons.com_60726.png" />
+    <Content Include="Login\views\Doctor\Dacto\button_reload_15002.png" />
+    <Content Include="Login\views\Doctor\Dacto\calendar_time_event_date_icon_220247.png" />
+    <Content Include="Login\views\Doctor\Dacto\cancel_77947.png" />
+    <Content Include="Login\views\Doctor\Dacto\diagnosis_coronavirus_covid_symstoms_information_checklist_icon_141627.png" />
+    <Content Include="Login\views\Doctor\Dacto\e9def10cd16308da93daad122c7b8a8f.jpg" />
+    <Content Include="Login\views\Doctor\Dacto\folder-directory-reload-refresh_108581.png" />
+    <Content Include="Login\views\Doctor\Dacto\iconfinder-3-avatar-2754579_120516.png" />
+    <Content Include="Login\views\Doctor\Dacto\iconfinder-dedicatedipaddress-4263513_117864.png" />
+    <Content Include="Login\views\Doctor\Dacto\medical-03_icon-icons.com_73941.png" />
+    <Content Include="Login\views\Doctor\Dacto\medical-29_icon-icons.com_73943.png" />
+    <Content Include="Login\views\Doctor\Dacto\Microsoft_Excel-01_25074.png" />
+    <Content Include="Login\views\Doctor\Dacto\OIF.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\OIP %281%29.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\OIP %282%29.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\OIP %283%29.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\OIP.jpeg" />
+    <Content Include="Login\views\Doctor\Dacto\person_user_customer_female_people_1689.png" />
+    <Content Include="Login\views\Doctor\Dacto\search_icon_229534.png" />
+    <Content Include="Login\views\Doctor\Dacto\search_magnifier_icon_145939.png" />
+    <Content Include="Login\views\Doctor\Dacto\task_planning_scheduling_roadmap_project_plan_project_management_icon_262962.png" />
+    <Content Include="Login\views\Doctor\Dacto\trade_report_reports_documents_2351 %281%29.png" />
+    <Content Include="Login\views\Doctor\Dacto\usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707 %281%29.png" />
+    <Content Include="Login\views\Doctor\Dacto\_123033.png" />
+    <Content Include="Login\views\Doctor\Moalegat\add.png" />
+    <Content Include="Login\views\Doctor\Moalegat\availability.png" />
+    <Content Include="Login\views\Doctor\Moalegat\bed %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\calendar.png" />
+    <Content Include="Login\views\Doctor\Moalegat\call.png" />
+    <Content Include="Login\views\Doctor\Moalegat\cancel1.png" />
+    <Content Include="Login\views\Doctor\Moalegat\caries %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\caries.png" />
+    <Content Include="Login\views\Doctor\Moalegat\clock %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\close.png" />
+    <Content Include="Login\views\Doctor\Moalegat\delete.png" />
+    <Content Include="Login\views\Doctor\Moalegat\dental-surgery.png" />
+    <Content Include="Login\views\Doctor\Moalegat\doctor.png" />
+    <Content Include="Login\views\Doctor\Moalegat\edit.png" />
+    <Content Include="Login\views\Doctor\Moalegat\hour-glass.png" />
+    <Content Include="Login\views\Doctor\Moalegat\light-bulb.png" />
+    <Content Include="Login\views\Doctor\Moalegat\loupe.png" />
+    <Content Include="Login\views\Doctor\Moalegat\medical-report.png" />
+    <Content Include="Login\views\Doctor\Moalegat\phone-call %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\refresh_arrow_1546.png" />
+    <Content Include="Login\views\Doctor\Moalegat\schedule.png" />
+    <Content Include="Login\views\Doctor\Moalegat\score.png" />
+    <Content Include="Login\views\Doctor\Moalegat\seo %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\seo %282%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\seo.png" />
+    <Content Include="Login\views\Doctor\Moalegat\teeth-shining %281%29.png" />
+    <Content Include="Login\views\Doctor\Moalegat\teeth-shining.png" />
+    <Content Include="Login\views\Doctor\Moalegat\vcsconflicting_93497.png" />
+    <Content Include="Login\views\Employee\Employees\1485477104-basket_78591.png" />
+    <Content Include="Login\views\Employee\Employees\4202011emailgmaillogomailsocialsocialmedia-115677_115624 %281%29.png" />
+    <Content Include="Login\views\Employee\Employees\Add_27013.ico" />
+    <Content Include="Login\views\Employee\Employees\Add_27013.png" />
+    <Content Include="Login\views\Employee\Employees\alarm-clock_icon-icons.com_60726.png" />
+    <Content Include="Login\views\Employee\Employees\avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" />
+    <Content Include="Login\views\Employee\Employees\button_reload_15002.png" />
+    <Content Include="Login\views\Employee\Employees\calendar_time_event_date_icon_220247.png" />
+    <Content Include="Login\views\Employee\Employees\call_phone_22173.png" />
+    <Content Include="Login\views\Employee\Employees\campus_school_building_front_icon-icons.com_75490.png" />
+    <Content Include="Login\views\Employee\Employees\cancel_77947.png" />
+    <Content Include="Login\views\Employee\Employees\clipboard_notes_list_tasks_icon_191193 %281%29.png" />
+    <Content Include="Login\views\Employee\Employees\Contacts_31110.png" />
+    <Content Include="Login\views\Employee\Employees\contacts_users_7209.png" />
+    <Content Include="Login\views\Employee\Employees\edit_undo_icon_180820.png" />
+    <Content Include="Login\views\Employee\Employees\folder-directory-reload-refresh_108581.png" />
+    <Content Include="Login\views\Employee\Employees\ic_add_box_128_28125.png" />
+    <Content Include="Login\views\Employee\Employees\location_map_pin_mark_icon_148685.png" />
+    <Content Include="Login\views\Employee\Employees\number7_numero_12635.png" />
+    <Content Include="Login\views\Employee\Employees\Overtime-80_icon-icons.com_57296.png" />
+    <Content Include="Login\views\Employee\Employees\search_icon_229534.png" />
+    <Content Include="Login\views\Employee\Employees\usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707 %281%29.png" />
+    <Content Include="Login\views\Employee\Employees\userrating-115845_115824.png" />
+    <Content Include="Login\views\Employee\Employees\user_femalecustomer_person_usuari_9885.png" />
+    <Content Include="Login\views\Employee\Employees\تنزيل %281%29.jpeg" />
+    <Content Include="Login\views\Employee\Employees\تنزيل.jpeg" />
+    <Content Include="Login\views\Moalegat\image\add.png" />
+    <Content Include="Login\views\Moalegat\image\availability.png" />
+    <Content Include="Login\views\Moalegat\image\bed %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\calendar.png" />
+    <Content Include="Login\views\Moalegat\image\call.png" />
+    <Content Include="Login\views\Moalegat\image\cancel1.png" />
+    <Content Include="Login\views\Moalegat\image\caries %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\caries.png" />
+    <Content Include="Login\views\Moalegat\image\clock %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\close.png" />
+    <Content Include="Login\views\Moalegat\image\delete.png" />
+    <Content Include="Login\views\Moalegat\image\dental-surgery.png" />
+    <Content Include="Login\views\Moalegat\image\doctor.png" />
+    <Content Include="Login\views\Moalegat\image\edit.png" />
+    <Content Include="Login\views\Moalegat\image\hour-glass.png" />
+    <Content Include="Login\views\Moalegat\image\light-bulb.png" />
+    <Content Include="Login\views\Moalegat\image\loupe.png" />
+    <Content Include="Login\views\Moalegat\image\medical-report.png" />
+    <Content Include="Login\views\Moalegat\image\phone-call %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\refresh_arrow_1546.png" />
+    <Content Include="Login\views\Moalegat\image\scaling.png" />
+    <Content Include="Login\views\Moalegat\image\schedule.png" />
+    <Content Include="Login\views\Moalegat\image\score.png" />
+    <Content Include="Login\views\Moalegat\image\seo %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\seo %282%29.png" />
+    <Content Include="Login\views\Moalegat\image\seo.png" />
+    <Content Include="Login\views\Moalegat\image\teeth-shining %281%29.png" />
+    <Content Include="Login\views\Moalegat\image\teeth-shining.png" />
+    <Content Include="Login\views\Moalegat\image\vcsconflicting_93497.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controll\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
